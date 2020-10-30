@@ -31,7 +31,7 @@
     "zipcode": {
       "type": "text"
     },
-    "reason": {
+    "reasons": {
       "type": "dropdown",
       "label": "Motif",
         "options": [
