@@ -108,6 +108,26 @@
         "accounts": {
           "description": "Utilisé pour obtenir les données du compte"
         }
+      },
+      "fields": {
+        "birthday": {
+          "label": "Date de naissance"
+        },
+        "placeofbirth": {
+          "label": "Lieu de naissance"
+        },
+        "address": {
+          "label": "Adresse"
+        },
+        "city": {
+          "label": "Ville"
+        },
+        "zipcode": {
+          "label": "Code postal"
+        },
+        "reasons": {
+          "label": "Motif"
+        }
       }
     },
     "en": {
@@ -119,6 +139,26 @@
         },
         "accounts": {
           "description": "Required to get the account's data"
+        }
+      },
+      "fields": {
+        "birthday": {
+          "label": "Birth day"
+        },
+        "placeofbirth": {
+          "label": "Place of birth"
+        },
+        "address": {
+          "label": "Address"
+        },
+        "city": {
+          "label": "City"
+        },
+        "zipcode": {
+          "label": "Zip code"
+        },
+        "reasons": {
+          "label": "Reason"
         }
       }
     }
