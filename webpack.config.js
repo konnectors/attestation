@@ -12,9 +12,9 @@ const readManifest = () =>
 const svgo = new SvgoInstance({
   plugins: [
     {
-      inlineStyles: { onlyMatchedOnce: false }
-    }
-  ]
+      inlineStyles: { onlyMatchedOnce: false },
+    },
+  ],
 })
 
 let iconName
@@ -33,7 +33,7 @@ module.exports = {
   mode: 'none',
   output: {
     path: path.join(__dirname, 'build'),
-    filename: 'index.js'
+    filename: 'index.js',
   },
   plugins: [
     new CopyPlugin({
@@ -43,25 +43,25 @@ module.exports = {
         { from: 'README.md' },
         { from: 'assets', transform: optimizeSVGIcon },
         { from: '.travis.yml' },
-        { from: 'LICENSE' }
-      ]
+        { from: 'LICENSE' },
+      ],
     }),
     new webpack.DefinePlugin({
-      __WEBPACK_PROVIDED_MANIFEST__: JSON.stringify(readManifest())
-    })
+      __WEBPACK_PROVIDED_MANIFEST__: JSON.stringify(readManifest()),
+    }),
   ],
   module: {
     // to ignore the warnings like :
     // WARNING in ../libs/node_modules/bindings/bindings.js 76:22-40
     // Critical dependency: the request of a dependency is an expression
     // Since we cannot change this dependency. I think it won't hide more important messages
-    exprContextCritical: false
-  }
+    exprContextCritical: false,
+  },
 }
 
 function optimizeSVGIcon(buffer, path) {
   if (appIconRX && path.match(appIconRX)) {
-    return svgo.optimize(buffer).then(resp => resp.data)
+    return svgo.optimize(buffer).then((resp) => resp.data)
   } else {
     return buffer
   }

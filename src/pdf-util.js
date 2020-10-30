@@ -1,6 +1,5 @@
 const generateQR = require('./util')
 const { PDFDocument, StandardFonts } = require('pdf-lib')
-const fs = require('fs')
 
 const ys = {
   travail: 578,
@@ -14,7 +13,7 @@ const ys = {
   enfants: 211,
 }
 
-async function generatePdf(profile, reasons) {
+async function generatePdf(profile, reasons, pdfBase) {
   const creationInstant = new Date()
   const creationDate = creationInstant.toLocaleDateString('fr-FR')
   const creationHour = creationInstant
@@ -43,9 +42,7 @@ async function generatePdf(profile, reasons) {
     `Motifs: ${reasons}`,
   ].join(';\n ')
 
-  const pdfDoc = await PDFDocument.load(
-    fs.readFileSync('./src/certificate.pdf')
-  )
+  const pdfDoc = await PDFDocument.load(pdfBase)
 
   // set pdf metadata
   pdfDoc.setTitle('COVID-19 - Déclaration de déplacement')
@@ -76,7 +73,7 @@ async function generatePdf(profile, reasons) {
   drawText(`${address} ${zipcode} ${city}`, 133, 652)
 
   reasons.split(', ').forEach((reason) => {
-    drawText('x', 84, ys[reason], 18)
+    drawText('x', 78, ys[reason], 18)
   })
 
   let locationSize = getIdealFontSize(font, profile.city, 83, 7, 11)

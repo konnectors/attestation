@@ -3,19 +3,76 @@
   "name": "Attestation",
   "type": "konnector",
   "language": "node",
-  "icon": "icon.png",
+  "icon": "icon.svg",
   "slug": "attestation",
   "source": "git@github.com:konnectors/attestation.git",
   "editor": "Cozy",
   "vendor_link": "https://cozy.io",
   "categories": ["public_service"],
   "fields": {
-    "login": {
+    "firstname": {
       "type": "text"
     },
-    "password": {
-      "type": "password"
+    "lastname": {
+      "type": "text"
     },
+    "birthday": {
+      "type": "date"
+    },
+    "placeofbirth": {
+      "type": "text"
+    },
+    "address": {
+      "type": "text"
+    },
+    "city": {
+      "type": "text"
+    },
+    "zipcode": {
+      "type": "text"
+    },
+    "reasons": {
+      "type": "dropdown",
+      "label": "Motif",
+        "options": [
+          {
+            "name": "Déplacements entre le domicile et le lieu d'exercice de l'activité professionnelle ou les déplacements professionnels ne pouvant être différés",
+            "value": "travail"
+          },
+          {
+            "name": "Déplacements pour effectuer des achats de fournitures nécessaires à l'activité professionnelle, des achats de première nécessité dans des établissements dont les activités demeurent autorisées (liste sur gouvernement.fr) et les livraisons à domicile",
+            "value": "achats"
+          },
+          {
+            "name": "Consultations et soins ne pouvant être assurés à distance et ne pouvant être différés et l’achat de médicaments",
+            "value": "sante"
+          },
+          {
+            "name": "Déplacements pour motif familial impérieux, pour l'assistance aux personnes vulnérables et précaires ou la garde d'enfants",
+            "value": "famille"
+          },
+          {
+            "name": "Déplacements des personnes en situation de handicap et de leur accompagnant ;",
+            "value": "handicap"
+          },
+          {
+            "name": "Déplacements brefs, dans la limite d'une heure quotidienne et dans un rayon maximal d'un kilomètre autour du domicile, liés soit à l'activité physique individuelle des personnes, à l'exclusion de toute pratique sportive collective et de toute proximité avec d'autres personnes, soit à la promenade avec les seules personnes regroupées dans un même domicile, soit aux besoins des animaux de compagnie",
+            "value": "sport_animaux"
+          },
+          {
+            "name": "Convocation judiciaire ou administrative et rendez-vous dans un service public",
+            "value": "convocation"
+          },
+          {
+            "name": "Participation à des missions d'intérêt général sur demande de l'autorité administrative",
+            "value": "missions"
+          },
+          {
+            "name": "Déplacement pour chercher les enfants à l’école et à l’occasion de leurs activités périscolaires",
+            "value": "enfants"
+          }
+        ]
+      },
     "advancedFields": {
       "folderPath": {
         "advanced": true,
@@ -28,6 +85,9 @@
   ],
   "screenshots": [],
   "permissions": {
+    "identities": {
+      "type": "io.cozy.identities"
+    },
     "files": {
       "type": "io.cozy.files"
     },
@@ -45,11 +105,34 @@
       "short_description": "Génateur d'attestation",
       "long_description": "Génateur d'attestation",
       "permissions": {
+        "identities": {
+          "description": "Pour pouvoir réutiliser votre identité Maif"
+        },
         "files": {
           "description": "Utilisé pour sauvegarder les attestations"
         },
         "accounts": {
           "description": "Utilisé pour obtenir les données du compte"
+        }
+      },
+      "fields": {
+        "birthday": {
+          "label": "Date de naissance"
+        },
+        "placeofbirth": {
+          "label": "Lieu de naissance"
+        },
+        "address": {
+          "label": "Adresse"
+        },
+        "city": {
+          "label": "Ville"
+        },
+        "zipcode": {
+          "label": "Code postal"
+        },
+        "reasons": {
+          "label": "Motif"
         }
       }
     },
@@ -57,11 +140,34 @@
       "short_description": "French attestation generator",
       "long_description": "French attestation generator",
       "permissions": {
+        "identities": {
+          "description": "Required to save your identity and reuse it"
+        },
         "files": {
           "description": "Required to save the attestation"
         },
         "accounts": {
           "description": "Required to get the account's data"
+        }
+      },
+      "fields": {
+        "birthday": {
+          "label": "Birth day"
+        },
+        "placeofbirth": {
+          "label": "Place of birth"
+        },
+        "address": {
+          "label": "Address"
+        },
+        "city": {
+          "label": "City"
+        },
+        "zipcode": {
+          "label": "Zip code"
+        },
+        "reasons": {
+          "label": "Reason"
         }
       }
     }
