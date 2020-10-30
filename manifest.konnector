@@ -3,7 +3,7 @@
   "name": "Attestation",
   "type": "konnector",
   "language": "node",
-  "icon": "icon.png",
+  "icon": "icon.svg",
   "slug": "attestation",
   "source": "git@github.com:konnectors/attestation.git",
   "editor": "Cozy",
@@ -85,6 +85,9 @@
   ],
   "screenshots": [],
   "permissions": {
+    "identities": {
+      "type": "io.cozy.identities"
+    },
     "files": {
       "type": "io.cozy.files"
     },
@@ -102,6 +105,9 @@
       "short_description": "Génateur d'attestation",
       "long_description": "Génateur d'attestation",
       "permissions": {
+        "identities": {
+          "description": "Pour pouvoir réutiliser votre identité Maif"
+        },
         "files": {
           "description": "Utilisé pour sauvegarder les attestations"
         },
@@ -134,6 +140,9 @@
       "short_description": "French attestation generator",
       "long_description": "French attestation generator",
       "permissions": {
+        "identities": {
+          "description": "Required to save your identity and reuse it"
+        },
         "files": {
           "description": "Required to save the attestation"
         },
