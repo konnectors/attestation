@@ -33,7 +33,7 @@
     },
     "reason": {
       "type": "dropdown",
-      "label": "branchName",
+      "label": "Motif",
         "options": [
           {
             "name": "Déplacements entre le domicile et le lieu d'exercice de l'activité professionnelle ou les déplacements professionnels ne pouvant être différés",
