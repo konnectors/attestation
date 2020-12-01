@@ -8,7 +8,7 @@ module.exports = new BaseKonnector(start)
 
 async function start(fields) {
   const pdfBase = await fetch(
-    'https://raw.githubusercontent.com/LAB-MI/attestation-deplacement-derogatoire-q4-2020/main/src/certificate.pdf'
+    'https://raw.githubusercontent.com/LAB-MI/attestation-deplacement-derogatoire-q4-2020/ca73ef8b11df3d3ddbb394676f7d5415dd658133/src/certificate.pdf'
   ).then((res) => res.buffer())
 
   const now = new Date()
