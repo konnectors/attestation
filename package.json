@@ -37,7 +37,7 @@
     "travisDeployKey": "./bin/generate_travis_deploy_key"
   },
   "dependencies": {
-    "cozy-konnector-libs": "4.37.1",
+    "cozy-konnector-libs": "4.38.2",
     "into-stream": "^6.0.0",
     "isomorphic-fetch": "^3.0.0",
     "pdf-lib": "^1.11.2",
