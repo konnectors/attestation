@@ -38,10 +38,10 @@
   },
   "dependencies": {
     "cozy-konnector-libs": "4.45.0",
-    "into-stream": "^6.0.0",
-    "isomorphic-fetch": "^3.0.0",
-    "pdf-lib": "^1.11.2",
-    "qrcode": "^1.4.4"
+    "into-stream": "6.0.0",
+    "isomorphic-fetch": "3.0.0",
+    "pdf-lib": "1.11.2",
+    "qrcode": "1.4.4"
   },
   "devDependencies": {
     "cozy-jobs-cli": "1.16.1",
