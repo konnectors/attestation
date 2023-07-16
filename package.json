@@ -40,7 +40,7 @@
     "into-stream": "7.0.0",
     "isomorphic-fetch": "3.0.0",
     "pdf-lib": "1.17.1",
-    "qrcode": "1.5.0"
+    "qrcode": "1.5.3"
   },
   "devDependencies": {
     "cozy-jobs-cli": "1.17.4",
